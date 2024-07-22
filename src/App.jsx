@@ -1,7 +1,7 @@
 import "./App.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import SignIn from "./components/SignIn";
 import Signup from "./components/Signup";
+import SignIn from './components/SignIn'
 import ScrollToTop from "./components/ScrollTop";
 import Home from "./components/Home";
 
@@ -12,8 +12,8 @@ function App() {
         <ScrollToTop />
         <Routes>
           <Route path="/" element={<Signup />} />
+          <Route path="/login" element={<SignIn />} />
           <Route path="/home" element={<Home />} />
-            <Route path="/login" element={<SignIn />} />
         </Routes>
       </Router>
     </>
