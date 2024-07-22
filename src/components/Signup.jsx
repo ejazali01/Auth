@@ -10,14 +10,14 @@ import bar from "../assets/signup/three line icon.svg";
 import star from "../assets/signup/star.svg";
 import google from "../assets/signup/logo googleg 48dp.svg";
 import googleLogoColourful from "../assets/signup/google logo colorful.svg";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Signup = () => {
   const [passwordShown, setPasswordShown] = useState(false);
   const [loading, setLoading] = useState(false);
   const [formData, setFormData] = useState({ email: "", password: "" });
 
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   const togglePasswordVisibility = () => {
     setPasswordShown(!passwordShown);
@@ -37,10 +37,10 @@ const Signup = () => {
       localStorage.setItem("user", JSON.stringify(formData));
       console.log("User signed up:", formData);
       setFormData({
-        email : "",
-        password : ""
-      })
-      navigate('/signin')
+        email: "",
+        password: "",
+      });
+      navigate("/signin");
     } catch (error) {
       console.error("Error saving user data:", error);
     } finally {
@@ -178,12 +178,12 @@ const Signup = () => {
                       </button>
                       <h1 className="text-center text-[#B3B3B3] font-[400] text-[16px] leading-[24px]">
                         Already have an account?
-                        <a
-                          href="/login"
+                        <Link
+                          to="/login"
                           className="text-[#277DFE] font-[400] text-[16px] leading-[24px] pl-2"
                         >
                           Login
-                        </a>
+                        </Link>
                       </h1>
                     </div>
                   </form>
